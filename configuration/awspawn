@@ -1,5 +1,5 @@
 #!/bin/bash
-## This configuration file is meant for applications that
+#  This configuration file is meant for applications that
 #  still run in the background when a reload is triggered
 #  for awesome, this script just kills the running instance
 #  and starts a new one.

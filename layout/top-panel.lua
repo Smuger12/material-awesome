@@ -14,7 +14,7 @@ local icons = require('theme.icons')
 -- Clock / Calendar 24h format
 local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d.%m.%Y\n     %H:%M</span>')
 
--- Clock / Calendar 12AM/PM fornat
+-- Clock / Calendar 12AM/PM format
 -- local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d.%m.%Y\n  %I:%M %p</span>\n<span font="Roboto Mono bold 9">%p</span>')
 -- textclock.forced_height = 56
 

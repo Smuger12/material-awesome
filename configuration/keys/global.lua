@@ -10,7 +10,7 @@ local apps = require('configuration.apps')
 local globalKeys =
   awful.util.table.join(
   -- Hotkeys
-  awful.key({modkey}, 'F1', hotkeys_popup.show_help, {description = 'show help', group = 'awesome'}),
+  awful.key({modkey}, 'h', hotkeys_popup.show_help, {description = 'show help', group = 'awesome'}),
   -- Tag browsing
   awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
   awful.key({modkey}, 's', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
@@ -263,17 +263,17 @@ local globalKeys =
     {},
     'XF86MonBrightnessUp',
     function()
-      awful.spawn('xbacklight -inc 10')
+      awful.spawn('xbacklight -inc 5')
     end,
-    {description = '+10%', group = 'hotkeys'}
+    {description = 'brightness +5%', group = 'fn hotkeys'}
   ),
   awful.key(
     {},
     'XF86MonBrightnessDown',
     function()
-      awful.spawn('xbacklight -dec 10')
+      awful.spawn('xbacklight -dec 5')
     end,
-    {description = '-10%', group = 'hotkeys'}
+    {description = 'brightness -5%', group = 'fn hotkeys'}
   ),
   -- ALSA volume control
   awful.key(
@@ -282,7 +282,7 @@ local globalKeys =
     function()
       awful.spawn('amixer -D pulse sset Master 5%+')
     end,
-    {description = 'volume up', group = 'hotkeys'}
+    {description = 'volume up', group = 'fn hotkeys'}
   ),
   awful.key(
     {},
@@ -290,39 +290,23 @@ local globalKeys =
     function()
       awful.spawn('amixer -D pulse sset Master 5%-')
     end,
-    {description = 'volume down', group = 'hotkeys'}
+    {description = 'volume down', group = 'fn hotkeys'}
   ),
   awful.key(
     {},
     'XF86AudioMute',
     function()
-      awful.spawn('amixer -D pulse set Master 1+ toggle')
+      awful.spawn('amixer set Master toggle')
     end,
-    {description = 'toggle mute', group = 'hotkeys'}
+    {description = 'toggle speakers mute', group = 'fn hotkeys'}
   ),
   awful.key(
     {},
-    'XF86AudioNext',
+    'XF86AudioMicMute',
     function()
-      --
+      awful.spawn('amixer set Capture toggle')
     end,
-    {description = 'toggle mute', group = 'hotkeys'}
-  ),
-  awful.key(
-    {},
-    'XF86PowerDown',
-    function()
-      --
-    end,
-    {description = 'toggle mute', group = 'hotkeys'}
-  ),
-  awful.key(
-    {},
-    'XF86PowerOff',
-    function()
-      _G.exit_screen_show()
-    end,
-    {description = 'toggle mute', group = 'hotkeys'}
+    {description = 'toggle mic mute', group = 'fn hotkeys'}
   ),
   -- Screen management
   awful.key(
@@ -347,38 +331,6 @@ local globalKeys =
     {description = 'open default program for tag/workspace', group = 'tag'}
   ),
   -- Custom hotkeys
-  -- vfio integration
-  awful.key(
-    {'Control',altkey},
-    'space',
-    function()
-      awful.util.spawn_with_shell('vm-attach attach')
-    end
-  ),
-  -- Lutris hotkey
-  awful.key(
-    {modkey},
-    'g',
-    function()
-      awful.util.spawn_with_shell('lutris')
-    end
-  ),
-  -- System Monitor hotkey
-  awful.key(
-    {modkey},
-    'm',
-    function()
-      awful.util.spawn_with_shell('mate-system-monitor')
-    end
-  ),
-  -- Kill VLC
-  awful.key(
-    {modkey},
-    'v',
-    function()
-      awful.util.spawn_with_shell('killall -9 vlc')
-    end
-  ),
   -- File Manager
   awful.key(
     {modkey},
@@ -386,18 +338,9 @@ local globalKeys =
     function()
       awful.util.spawn(apps.default.files)
     end,
-    {description = 'filebrowser', group = 'hotkeys'}
-  ),
-  -- Emoji Picker
-  awful.key(
-    {modkey},
-    'a',
-    function()
-      awful.util.spawn_with_shell('ibus emoji')
-    end,
-    {description = 'Open the ibus emoji picker to copy an emoji to your clipboard', group = 'hotkeys'}
+    {description = 'open a filebrowser', group = 'launcher'}
   )
-)
+)  
 
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it works on any keyboard layout.

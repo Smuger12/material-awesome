@@ -10,13 +10,13 @@ return {
   default = {
     terminal = 'alacritty',
     rofi = rofi_command,
-    lock = 'i3lock-fancy',
+    lock = 'betterlockscreen -l',
     quake = 'alacritty',
     screenshot = 'flameshot full -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures',
     delayed_screenshot = 'flameshot full -p ~/Pictures -d 5000',
     browser = 'chromium',
-    editor = 'alacritty -e micro', -- gui text editor
+    editor = 'gedit', -- gui text editor
     social = 'discord',
     game = rofi_command,
     files = 'pcmanfm',

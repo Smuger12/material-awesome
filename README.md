@@ -29,8 +29,7 @@ wget -qO- https://git.io/papirus-icon-theme-install | sh
 #### Arch-Based
 
 ```
-yay -S awesome rofi picom i3lock-fancy xclip ttf-roboto gnome-polkit materia-gtk-theme lxappearance flameshot pnmixer network-manager-applet xfce4-power-manager -y
-wget -qO- https://git.io/papirus-icon-theme-install | sh
+yay -S awesome rofi picom i3lock-fancy xclip ttf-roboto gnome-polkit materia-gtk-theme papirus-icon-theme lxappearance-gtk3 flameshot pnmixer-gtk3 network-manager-applet xorg-xbacklight xfce4-power-manager -y
 ```
 
 #### Program list
@@ -45,7 +44,7 @@ wget -qO- https://git.io/papirus-icon-theme-install | sh
 - [Materia](https://github.com/nana-4/materia-theme) as GTK theme - Arch Install: materia-theme debian: materia-gtk-theme
 - [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) as icon theme Universal Install: wget -qO- https://git.io/papirus-icon-theme-install | sh
 - [lxappearance](https://sourceforge.net/projects/lxde/files/LXAppearance/) to set up the gtk and icon theme
-- (Laptop) [xbacklight](https://www.x.org/archive/X11R7.5/doc/man/man1/xbacklight.1.html) for adjusting brightness on laptops (disabled by default)
+- (Laptop) [xbacklight](https://www.x.org/archive/X11R7.5/doc/man/man1/xbacklight.1.html) for adjusting brightness on laptops 
 - [flameshot](https://flameshot.js.org/#/) my personal screenshot utility of choice, can be replaced by whichever you want, just remember to edit the apps.lua file
 - [pnmixer](https://github.com/nicklan/pnmixer) Audio Tray icon that is in debian repositories and is easily installed on arch through AUR.
 - [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet) nm-applet is a Network Manager Tray display from GNOME.
@@ -64,7 +63,7 @@ Note: for cursor theme, edit `~/.icons/default/index.theme` and `~/.config/gtk3-
 
 ### 4) Same theme for Qt/KDE applications and GTK applications, and fix missing indicators
 
-First install `qt5-style-plugins` (debian) | `qt5-styleplugins` (arch) and add this to the bottom of your `/etc/environment`
+First install `qt5-style-plugins` (Debian) | `qt5-styleplugins` (Arch) and add this to the bottom of your `/etc/environment`
 
 ```bash
 XDG_CURRENT_DESKTOP=Unity

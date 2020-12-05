@@ -14,7 +14,7 @@ return {
     quake = 'alacritty',
     screenshot = 'flameshot full -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures',
-    delayed_screenshot = 'flameshot full -p ~/Pictures -d 5000',
+    delayed_screenshot = 'flameshot gui -p ~/Pictures -d 5000',
     browser = 'chromium',
     editor = 'gedit', -- gui text editor
     social = 'discord',

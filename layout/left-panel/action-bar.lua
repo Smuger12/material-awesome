@@ -27,8 +27,8 @@ return function(screen, panel, action_bar_width)
   local clock_widget = wibox.container.margin(textclock, dpi(13), dpi(13), dpi(8), dpi(8))
   local systray = wibox.widget.systray()
   systray:set_horizontal(false)
-  systray:set_base_size(30)
-  beautiful.systray_icon_spacing = 12
+  systray:set_base_size(28)
+  beautiful.systray_icon_spacing = 10
 
   local menu_icon =
     wibox.widget {

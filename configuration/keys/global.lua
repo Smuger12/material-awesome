@@ -10,13 +10,41 @@ local apps = require('configuration.apps')
 local globalKeys =
   awful.util.table.join(
   -- Hotkeys
-  awful.key({modkey}, 'h', hotkeys_popup.show_help, {description = 'show help', group = 'awesome'}),
+  awful.key({modkey}, 
+  'h', 
+  hotkeys_popup.show_help, 
+    {description = 'show help', group = 'awesome'}
+  ),
   -- Tag browsing
-  awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
-  awful.key({modkey}, 's', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
-  awful.key({altkey, 'Control'}, 'Up', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
-  awful.key({altkey, 'Control'}, 'Down', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
-  awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
+  awful.key(
+  {modkey},
+  'w', 
+  awful.tag.viewprev, 
+    {description = 'view previous', group = 'tag (workspace)'}
+  ),
+  awful.key({modkey}, 
+  's', 
+  awful.tag.viewnext, 
+    {description = 'view next', group = 'tag (workspace)'}
+  ),
+  awful.key(
+  {altkey, 'Control'}, 
+  'Up', 
+  awful.tag.viewprev, 
+    {description = 'view previous', group = 'tag (workspace)'}
+  ),
+  awful.key(
+  {altkey, 'Control'}, 
+  'Down', 
+  awful.tag.viewnext, 
+    {description = 'view next', group = 'tag (workspace)'}
+  ),
+  awful.key(
+  {modkey}, 
+  'Escape', 
+  awful.tag.history.restore, 
+    {description = 'go back', group = 'tag (workspace)'}
+  ),
   -- Default client focus
   awful.key(
     {modkey},
@@ -35,14 +63,6 @@ local globalKeys =
     {description = 'focus previous by index', group = 'client'}
   ),
   awful.key(
-    {modkey},
-    'r',
-    function()
-      _G.screen.primary.left_panel:toggle(true)
-    end,
-    {description = 'show main menu', group = 'awesome'}
-  ),
-  awful.key(
     {altkey},
     'space',
     function()
@@ -50,7 +70,12 @@ local globalKeys =
     end,
     {description = 'show main menu', group = 'awesome'}
   ),
-  awful.key({modkey}, 'u', awful.client.urgent.jumpto, {description = 'jump to urgent client', group = 'client'}),
+  awful.key(
+  {modkey}, 
+  'u', 
+  awful.client.urgent.jumpto, 
+  {description = 'jump to urgent client', group = 'client'}
+  ),
   awful.key(
     {altkey},
     'Tab',
@@ -61,7 +86,7 @@ local globalKeys =
         _G.client.focus:raise()
       end
     end,
-    {description = 'Switch to next window', group = 'client'}
+    {description = 'switch to next window', group = 'client'}
   ),
   awful.key(
     {altkey, 'Shift'},
@@ -73,7 +98,7 @@ local globalKeys =
         _G.client.focus:raise()
       end
     end,
-    {description = 'Switch to previous window', group = 'client'}
+    {description = 'switch to previous window', group = 'client'}
   ),
   -- Programms
   awful.key(
@@ -82,31 +107,31 @@ local globalKeys =
     function()
       awful.spawn(apps.default.lock)
     end,
-    {description = 'Lock the screen', group = 'awesome'}
+    {description = 'lock the screen', group = 'awesome'}
+  ),
+  awful.key(
+    {modkey, 'Shift'},
+    'Print',
+    function()
+      awful.util.spawn_with_shell(apps.default.delayed_screenshot)
+    end,
+    {description = 'mark an area and screenshot it 5 seconds later', group = 'screenshots'}
   ),
   awful.key(
     {modkey},
     'Print',
     function()
-      awful.util.spawn_with_shell(apps.default.delayed_screenshot)
-    end,
-    {description = 'Mark an area and screenshot it 10 seconds later (clipboard)', group = 'screenshots (clipboard)'}
-  ),
-  awful.key(
-    {modkey},
-    'p',
-    function()
       awful.util.spawn_with_shell(apps.default.screenshot)
     end,
-    {description = 'Take a screenshot of your active monitor and copy it to clipboard', group = 'screenshots (clipboard)'}
+    {description = 'take a screenshot of your active monitor and save it in ~/Pictures', group = 'screenshots'}
   ),
   awful.key(
-    {altkey, 'Shift'},
-    'p',
+    {modkey, 'Control'},
+    'Print',
     function()
       awful.util.spawn_with_shell(apps.default.region_screenshot)
     end,
-    {description = 'Mark an area and screenshot it to your clipboard', group = 'screenshots (clipboard)'}
+    {description = 'mark an area and take a screenshot and save it in ~/Pictures', group = 'screenshots'}
   ),
   awful.key(
     {modkey},
@@ -133,8 +158,15 @@ local globalKeys =
     end,
     {description = 'open a terminal', group = 'launcher'}
   ),
-  awful.key({modkey, 'Shift'}, 'r', _G.awesome.restart, {description = 'reload awesome', group = 'awesome'}),
-  awful.key({modkey, 'Shift'}, 'Escape', _G.awesome.quit, {description = 'quit awesome', group = 'awesome'}),
+  awful.key(
+  {modkey, 'Shift'}, 'r',
+   _G.awesome.restart,
+    {description = 'reload awesome', group = 'awesome'}
+    ),
+  awful.key({modkey, 'Shift'},
+   'Escape', 
+   _G.awesome.quit, 
+    {description = 'quit awesome', group = 'awesome'}),
   awful.key(
     {altkey, 'Shift'},
     'Right',
@@ -328,7 +360,7 @@ local globalKeys =
           }
         )
     end,
-    {description = 'open default program for tag/workspace', group = 'tag'}
+    {description = 'open default program for tag/workspace', group = 'tag (workspace)'}
   ),
   -- Custom hotkeys
   -- File Manager
@@ -338,7 +370,7 @@ local globalKeys =
     function()
       awful.util.spawn(apps.default.files)
     end,
-    {description = 'open a filebrowser', group = 'launcher'}
+    {description = 'open a file manager', group = 'launcher'}
   )
 )  
 
@@ -349,10 +381,10 @@ for i = 1, 9 do
   -- Hack to only show tags 1 and 9 in the shortcut window (mod+s)
   local descr_view, descr_toggle, descr_move, descr_toggle_focus
   if i == 1 or i == 9 then
-    descr_view = {description = 'view tag #', group = 'tag'}
-    descr_toggle = {description = 'toggle tag #', group = 'tag'}
-    descr_move = {description = 'move focused client to tag #', group = 'tag'}
-    descr_toggle_focus = {description = 'toggle focused client on tag #', group = 'tag'}
+    descr_view = {description = 'view tag #', group = 'tag (workspace)'}
+    descr_toggle = {description = 'toggle tag #', group = 'tag (workspace)'}
+    descr_move = {description = 'move focused client to tag #', group = 'tag (workspace)'}
+    descr_toggle_focus = {description = 'toggle focused client on tag #', group = 'tag (workspace)'}
   end
   globalKeys =
     awful.util.table.join(

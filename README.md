@@ -46,7 +46,7 @@ yay -S awesome rofi picom betterlockscreen xclip ttf-roboto gnome-polkit materia
 - [lxappearance](https://sourceforge.net/projects/lxde/files/LXAppearance/) to set up the gtk and icon theme
 - [xbacklight](https://www.x.org/archive/X11R7.5/doc/man/man1/xbacklight.1.html) for adjusting brightness on laptops 
 - [flameshot](https://flameshot.js.org/#/) screenshot utility (can be replaced by whichever you want, just remember to edit the apps.lua file)
-- [pnmixer](https://github.com/nicklan/pnmixer) audio tray con that is in debian repositories and is easily installed on arch through AUR.
+- [pnmixer](https://github.com/nicklan/pnmixer) audio tray icon that is in Debian repositories and is easily installed on arch through AUR.
 - [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet) nm-applet is a Network Manager Tray
 - [xfce4-power-manager](https://docs.xfce.org/xfce/xfce4-power-manager/start) XFCE4's power manager is excellent and a great way of dealing with sleep, monitor timeout, and other power management features.
 

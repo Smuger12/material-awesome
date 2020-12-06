@@ -10,40 +10,39 @@ local apps = require('configuration.apps')
 local globalKeys =
   awful.util.table.join(
   -- Hotkeys
-  awful.key({modkey}, 
-  'h', 
+  awful.key(
+  {modkey}, 'h', 
   hotkeys_popup.show_help, 
-    {description = 'show help', group = 'awesome'}
+  {description = 'show help', group = 'awesome'}
   ),
   -- Tag browsing
   awful.key(
-  {modkey},
-  'w', 
+  {modkey}, 'w', 
   awful.tag.viewprev, 
-    {description = 'view previous', group = 'tag (workspace)'}
+  {description = 'view previous', group = 'tag (workspace)'}
   ),
-  awful.key({modkey}, 
-  's', 
+  awful.key(
+  {modkey}, 's', 
   awful.tag.viewnext, 
-    {description = 'view next', group = 'tag (workspace)'}
+  {description = 'view next', group = 'tag (workspace)'}
   ),
   awful.key(
   {altkey, 'Control'}, 
   'Up', 
   awful.tag.viewprev, 
-    {description = 'view previous', group = 'tag (workspace)'}
+  {description = 'view previous', group = 'tag (workspace)'}
   ),
   awful.key(
   {altkey, 'Control'}, 
   'Down', 
   awful.tag.viewnext, 
-    {description = 'view next', group = 'tag (workspace)'}
+  {description = 'view next', group = 'tag (workspace)'}
   ),
   awful.key(
   {modkey}, 
   'Escape', 
   awful.tag.history.restore, 
-    {description = 'go back', group = 'tag (workspace)'}
+  {description = 'go back', group = 'tag (workspace)'}
   ),
   -- Default client focus
   awful.key(
@@ -381,10 +380,10 @@ for i = 1, 9 do
   -- Hack to only show tags 1 and 9 in the shortcut window (mod+s)
   local descr_view, descr_toggle, descr_move, descr_toggle_focus
   if i == 1 or i == 9 then
-    descr_view = {description = 'view tag #', group = 'tag (workspace)'}
-    descr_toggle = {description = 'toggle tag #', group = 'tag (workspace)'}
-    descr_move = {description = 'move focused client to tag #', group = 'tag (workspace)'}
-    descr_toggle_focus = {description = 'toggle focused client on tag #', group = 'tag (workspace)'}
+    descr_view = {description = 'view tag', group = 'tag (workspace)'}
+    descr_toggle = {description = 'toggle tag', group = 'tag (workspace)'}
+    descr_move = {description = 'move focused client to tag', group = 'tag (workspace)'}
+    descr_toggle_focus = {description = 'toggle focused client on tag', group = 'tag (workspace)'}
   end
   globalKeys =
     awful.util.table.join(

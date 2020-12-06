@@ -8,12 +8,12 @@
 
 # List of applications to run
 APPS=(
-    barrier
+    picom
     )
 
 # Some applications start child applications that need to be killed on reload
 KILL=(
-    barriers
+    picom
     )
 
 # First kill lingering apps

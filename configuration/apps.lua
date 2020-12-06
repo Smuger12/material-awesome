@@ -16,7 +16,7 @@ return {
     region_screenshot = 'flameshot gui -p ~/Pictures',
     delayed_screenshot = 'flameshot gui -p ~/Pictures -d 5000',
     browser = 'chromium',
-    editor = 'gedit', -- gui text editor
+    editor = 'gedit', -- gui text/code editor
     social = 'discord',
     game = rofi_command,
     files = 'pcmanfm',
@@ -24,16 +24,17 @@ return {
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
-    'picom --config ' .. filesystem.get_configuration_dir() .. '/configuration/picom.conf',
-    'nm-applet --indicator', -- wifi
-    'pnmixer', -- shows an audiocontrol applet in systray when installed.
+    'picom --config ' .. filesystem.get_configuration_dir() .. '/configuration/picom.conf', -- compositor
+    'nm-applet --indicator', -- network manager applet
+    'xfce4-power-manager', -- power manager 
+    --'pnmixer', -- shows an audiocontrol applet in systray when installed.
     --'blueberry-tray', -- Bluetooth tray icon
     '/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg)', -- credential manager
-    'xfce4-power-manager', -- Power manager
     --'flameshot',
-    --'steam -silent',  
-    -- Add applications that need to be killed between reloads
-    -- to avoid multipled instances, inside the awspawn script
-    '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions
+    --'steam -silent',
+    
+    --   Add applications that need to be killed between reloads
+    --   to avoid multipled instances, inside the awspawn script
+    --'~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions
   }
 }

@@ -93,7 +93,7 @@ return function(screen, panel, action_bar_width)
       --require('widget.package-updater'),
       --require('widget.wifi'),
       --require('widget.battery'),
-      wibox.container.margin(systray, dpi(10), dpi(10), dpi(10), dpi(25)),
+      wibox.container.margin(systray, dpi(10), dpi(10), dpi(10), dpi(20)),
       --clock_widget
     }
   }

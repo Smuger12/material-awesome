@@ -40,7 +40,7 @@ yay -S awesome rofi picom betterlockscreen xclip ttf-roboto gnome-polkit qt5-sty
 - [picom](https://github.com/yshui/picom) for the compositor universal install: picom - Debian users need PPA (`sudo add-apt-repository ppa:regolith-linux/unstable`).
 - [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen) as the lockscreen (can be replaced by whichever you want, just remember to edit the apps.lua file).
 - [xclip](https://github.com/astrand/xclip) for copying screenshots to clipboard package: xclip.
-- [gnome-polkit] recommend using the gnome-polkit as it integrates nicely for elevating programs that need root access.
+- gnome-polkit - recommend using the gnome-polkit as it integrates nicely for elevating programs that need root access.
 - [Materia](https://github.com/nana-4/materia-theme) as GTK theme.
 - [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) as icon theme - uiversal Install: wget -qO- https://git.io/papirus-icon-theme-install | sh
 - [lxappearance](https://sourceforge.net/projects/lxde/files/LXAppearance/) to set up the gtk and icon theme.
@@ -48,7 +48,7 @@ yay -S awesome rofi picom betterlockscreen xclip ttf-roboto gnome-polkit qt5-sty
 - [flameshot](https://flameshot.js.org/#/) screenshot utility (can be replaced by whichever you want, just remember to edit the apps.lua file).
 - [pnmixer](https://github.com/nicklan/pnmixer) audio tray icon that is in Debian repositories and is easily installed on arch through AUR.
 - [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet) nm-applet is a Network Manager Tray.
-- [xfce4-power-manager](https://docs.xfce.org/xfce/xfce4-power-manager/start) XFCE4's power manager is excellent and a great way of dealing with sleep, monitor timeout, and other power management features.
+- [xfce4-power-manager](https://docs.xfce.org/xfce/xfce4-power-manager/start) XFCE4's power manager is a great way of dealing with sleep, monitor timeout, and other power management features.
 
 ### 2) Clone the configuration
 
@@ -70,7 +70,7 @@ XDG_CURRENT_DESKTOP=Unity
 QT_QPA_PLATFORMTHEME=gtk2
 ```
 
-The first variable fixes most indicators (especially electron based ones!), the second tells Qt and KDE applications to use your gtk2 theme set through lxappearance.
+The first variable fixes most indicators (especially Electron based ones!), the second tells Qt and KDE applications to use your GTK2 theme set through lxappearance.
 
 ### 5) Read the documentation
 

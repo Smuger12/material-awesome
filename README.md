@@ -16,8 +16,8 @@ An almost desktop environment made with [AwesomeWM](https://awesomewm.org/) foll
 
 ### 1) Get all the dependencies
 
-#### Install inscrutions for Arch Linux 
-(if you have a different distribution, get what you have in the repository, just compile the rest of the packages - links below)
+#### Install instructions for Arch Linux 
+(if you have a different distribution, get what you have in the repository, just compile the rest of the packages - links in *Program list*)
 
 ```
 yay -S awesome rofi picom-jonaburg-git betterlockscreen ttf-roboto gnome-polkit qt5-styleplugins materia-gtk-theme papirus-icon-theme lxappearance-gtk3 flameshot pnmixer-gtk3 pavucontrol network-manager-applet xorg-xbacklight xfce4-power-manager -y

@@ -29,26 +29,26 @@ wget -qO- https://git.io/papirus-icon-theme-install | sh
 #### Arch-Based
 
 ```
-yay -S awesome rofi picom i3lock-fancy xclip ttf-roboto gnome-polkit materia-gtk-theme papirus-icon-theme lxappearance-gtk3 flameshot pnmixer-gtk3 network-manager-applet xorg-xbacklight xfce4-power-manager -y
+yay -S awesome rofi picom betterlockscreen xclip ttf-roboto gnome-polkit qt5-styleplugins materia-gtk-theme papirus-icon-theme lxappearance-gtk3 flameshot pnmixer-gtk3 network-manager-applet xorg-xbacklight xfce4-power-manager -y
 ```
 
 #### Program list
 
-- [AwesomeWM](https://awesomewm.org/) as the window manager - universal package install: awesome
-- [Roboto](https://fonts.google.com/specimen/Roboto) as the **font** - Debian: fonts-roboto Arch: ttf-roboto
-- [Rofi](https://github.com/DaveDavenport/rofi) for the app launcher - universal install: rofi
-- [picom](https://github.com/yshui/picom) for the compositor (blur and animations) universal install: picom - Debian users need PPA (`sudo add-apt-repository ppa:regolith-linux/unstable`)
-- [i3lock](https://github.com/meskarune/i3lock-fancy) the lockscreen application universal install: i3lock-fancy
-- [xclip](https://github.com/astrand/xclip) for copying screenshots to clipboard package: xclip
-- [gnome-polkit] recommend using the gnome-polkit as it integrates nicely for elevating programs that need root access
-- [Materia](https://github.com/nana-4/materia-theme) as GTK theme - Arch Install: materia-theme debian: materia-gtk-theme
-- [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) as icon theme Universal Install: wget -qO- https://git.io/papirus-icon-theme-install | sh
-- [lxappearance](https://sourceforge.net/projects/lxde/files/LXAppearance/) to set up the gtk and icon theme
-- (Laptop) [xbacklight](https://www.x.org/archive/X11R7.5/doc/man/man1/xbacklight.1.html) for adjusting brightness on laptops 
-- [flameshot](https://flameshot.js.org/#/) my personal screenshot utility of choice, can be replaced by whichever you want, just remember to edit the apps.lua file
-- [pnmixer](https://github.com/nicklan/pnmixer) Audio Tray icon that is in debian repositories and is easily installed on arch through AUR.
-- [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet) nm-applet is a Network Manager Tray display from GNOME.
-- [xfce4-power-manager](https://docs.xfce.org/xfce/xfce4-power-manager/start) XFCE4's power manager is excellent and a great way of dealing with sleep, monitor timeout, and other power management features.
+- [AwesomeWM](https://awesomewm.org/) as the window manager - universal package install: awesome.
+- [Roboto](https://fonts.google.com/specimen/Roboto) as the **font** - Debian: fonts-roboto Arch: ttf-roboto.
+- [rofi](https://github.com/DaveDavenport/rofi) for the app launcher - universal install: rofi.
+- [picom](https://github.com/yshui/picom) for the compositor universal install: picom - Debian users need PPA (`sudo add-apt-repository ppa:regolith-linux/unstable`).
+- [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen) as the lockscreen (can be replaced by whichever you want, just remember to edit the apps.lua file).
+- [xclip](https://github.com/astrand/xclip) for copying screenshots to clipboard package: xclip.
+- gnome-polkit - recommend using the gnome-polkit as it integrates nicely for elevating programs that need root access.
+- [Materia](https://github.com/nana-4/materia-theme) as GTK theme.
+- [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) as icon theme - uiversal Install: wget -qO- https://git.io/papirus-icon-theme-install | sh
+- [lxappearance](https://sourceforge.net/projects/lxde/files/LXAppearance/) to set up the gtk and icon theme.
+- [xbacklight](https://www.x.org/archive/X11R7.5/doc/man/man1/xbacklight.1.html) for adjusting brightness on laptops.
+- [flameshot](https://flameshot.js.org/#/) screenshot utility (can be replaced by whichever you want, just remember to edit the apps.lua file).
+- [pnmixer](https://github.com/nicklan/pnmixer) audio tray icon that is in Debian repositories and is easily installed on arch through AUR.
+- [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet) nm-applet is a Network Manager Tray.
+- [xfce4-power-manager](https://docs.xfce.org/xfce/xfce4-power-manager/start) XFCE4's power manager is a great way of dealing with sleep, monitor timeout, and other power management features.
 
 ### 2) Clone the configuration
 
@@ -70,7 +70,7 @@ XDG_CURRENT_DESKTOP=Unity
 QT_QPA_PLATFORMTHEME=gtk2
 ```
 
-The first variable fixes most indicators (especially electron based ones!), the second tells Qt and KDE applications to use your gtk2 theme set through lxappearance.
+The first variable fixes most indicators (especially Electron based ones!), the second tells Qt and KDE applications to use your GTK2 theme set through lxappearance.
 
 ### 5) Read the documentation
 

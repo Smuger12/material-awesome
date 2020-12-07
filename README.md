@@ -16,39 +16,29 @@ An almost desktop environment made with [AwesomeWM](https://awesomewm.org/) foll
 
 ### 1) Get all the dependencies
 
-#### Debian-Based
+#### Install inscrutions for Arch Linux (if you have a different distribution, get what you have in the repository, just compile the rest of the packages - links below)
 
 ```
-sudo add-apt-repository ppa:regolith-linux/unstable -y
-sudo apt install awesome fonts-roboto rofi picom i3lock xclip qt5-style-plugins materia-gtk-theme lxappearance xbacklight kde-spectacle nautilus xfce4-power-manager pnmixer network-manager-applet gnome-polkit -y
-wget -qO- https://git.io/papirus-icon-theme-install | sh
-```
-
-*Note: PPA is for picom since compton is old and hasn't been updated*
-
-#### Arch-Based
-
-```
-yay -S awesome rofi picom betterlockscreen xclip ttf-roboto gnome-polkit qt5-styleplugins materia-gtk-theme papirus-icon-theme lxappearance-gtk3 flameshot pnmixer-gtk3 network-manager-applet xorg-xbacklight xfce4-power-manager -y
+yay -S awesome rofi picom-jonaburg-git betterlockscreen ttf-roboto gnome-polkit qt5-styleplugins materia-gtk-theme papirus-icon-theme lxappearance-gtk3 flameshot pnmixer-gtk3 pavucontrol network-manager-applet xorg-xbacklight xfce4-power-manager -y
 ```
 
 #### Program list
 
-- [AwesomeWM](https://awesomewm.org/) as the window manager - universal package install: awesome.
-- [Roboto](https://fonts.google.com/specimen/Roboto) as the **font** - Debian: fonts-roboto Arch: ttf-roboto.
-- [rofi](https://github.com/DaveDavenport/rofi) for the app launcher - universal install: rofi.
-- [picom](https://github.com/yshui/picom) for the compositor universal install: picom - Debian users need PPA (`sudo add-apt-repository ppa:regolith-linux/unstable`).
-- [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen) as the lockscreen (can be replaced by whichever you want, just remember to edit the apps.lua file).
-- [xclip](https://github.com/astrand/xclip) for copying screenshots to clipboard package: xclip.
+- [AwesomeWM](https://awesomewm.org/) - as the window manager
+- [Roboto](https://fonts.google.com/specimen/Roboto) - as the **font**
+- [rofi](https://github.com/DaveDavenport/rofi) - for the app launcher
+- [picom-jonaburg](https://github.com/jonaburg/picom) - picom fork with **cool animations and rounded corners!**
+- [betterlockscreen](https://github.com/pavanjadhaw/betterlockscreen) - as the lockscreen (can be replaced by whichever you want, just remember to edit the apps.lua file).
 - gnome-polkit - recommend using the gnome-polkit as it integrates nicely for elevating programs that need root access.
-- [Materia](https://github.com/nana-4/materia-theme) as GTK theme.
-- [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) as icon theme - uiversal Install: wget -qO- https://git.io/papirus-icon-theme-install | sh
-- [lxappearance](https://sourceforge.net/projects/lxde/files/LXAppearance/) to set up the gtk and icon theme.
-- [xbacklight](https://www.x.org/archive/X11R7.5/doc/man/man1/xbacklight.1.html) for adjusting brightness on laptops.
-- [flameshot](https://flameshot.js.org/#/) screenshot utility (can be replaced by whichever you want, just remember to edit the apps.lua file).
-- [pnmixer](https://github.com/nicklan/pnmixer) audio tray icon that is in Debian repositories and is easily installed on arch through AUR.
-- [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet) nm-applet is a Network Manager Tray.
-- [xfce4-power-manager](https://docs.xfce.org/xfce/xfce4-power-manager/start) XFCE4's power manager is a great way of dealing with sleep, monitor timeout, and other power management features.
+- [Materia](https://github.com/nana-4/materia-theme) - as GTK theme (or whatever you want).
+- [Papirus Dark](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme) - as icon theme (or whatever you want).
+- [lxappearance](https://sourceforge.net/projects/lxde/files/LXAppearance/) - to set up the GTK and icon theme.
+- [pavucontrol](https://freedesktop.org/software/pulseaudio/pavucontrol/) - audio control.
+- [xbacklight](https://www.x.org/archive/X11R7.5/doc/man/man1/xbacklight.1.html) - for adjusting brightness on laptops.
+- [flameshot](https://flameshot.js.org/#/) - as screenshot utility (can be replaced by whichever you want, just remember to edit the apps.lua file).
+- [pnmixer](https://github.com/nicklan/pnmixer) - audio systray icon.
+- [network-manager-applet](https://gitlab.gnome.org/GNOME/network-manager-applet) - nm-applet is a Network Manager systray.
+- [xfce4-power-manager](https://docs.xfce.org/xfce/xfce4-power-manager/start) - XFCE4's power manager is a great way of dealing with sleep, monitor timeout, and other power management features.
 
 ### 2) Clone the configuration
 
@@ -63,7 +53,7 @@ Note: for cursor theme, edit `~/.icons/default/index.theme` and `~/.config/gtk3-
 
 ### 4) Same theme for Qt/KDE applications and GTK applications, and fix missing indicators
 
-First install `qt5-style-plugins` (Debian) | `qt5-styleplugins` (Arch) and add this to the bottom of your `/etc/environment`
+First install qt5-styleplugins (Arch) and add this to the bottom of your `/etc/environment`
 
 ```bash
 XDG_CURRENT_DESKTOP=Unity

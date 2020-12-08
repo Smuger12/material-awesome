@@ -43,7 +43,7 @@ widget_button:buttons(
       1,
       nil,
       function()
-        awful.spawn('wicd-client -n')
+        awful.spawn('alacritty -e nmtui')
       end
     )
   )

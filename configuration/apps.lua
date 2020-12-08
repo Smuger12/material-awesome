@@ -24,7 +24,8 @@ return {
   },
   -- List of apps to start once on start-up
   run_on_start_up = {
-    'picom --config ' .. filesystem.get_configuration_dir() .. '/configuration/picom.conf', -- compositor
+    'picom --config ' .. filesystem.get_configuration_dir() .. 'configuration/picom.conf', -- compositor
+    'nitrogen --restore', -- set wallpaper
     'nm-applet --indicator', -- network manager applet
     'xfce4-power-manager', -- power manager 
     --'pnmixer', -- shows an audiocontrol applet in systray when installed.

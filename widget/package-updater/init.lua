@@ -16,10 +16,6 @@ local clickable_container = require('widget.material.clickable-container')
 local gears = require('gears')
 local dpi = require('beautiful').xresources.apply_dpi
 
--- acpi sample outputs
--- Battery 0: Discharging, 75%, 01:51:38 remaining
--- Battery 0: Charging, 53%, 00:57:43 until charged
-
 local HOME = os.getenv('HOME')
 local PATH_TO_ICONS = HOME .. '/.config/awesome/widget/package-updater/icons/'
 local updateAvailable = false
@@ -68,26 +64,6 @@ awful.tooltip(
     preferred_positions = {'right', 'left', 'top', 'bottom'}
   }
 )
-
--- To use colors from beautiful theme put
--- following lines in rc.lua before require("battery"):
---beautiful.tooltip_fg = beautiful.fg_normal
---beautiful.tooltip_bg = beautiful.bg_normal
-
-local function show_battery_warning()
-  naughty.notify {
-    icon = PATH_TO_ICONS .. 'battery-alert.svg',
-    icon_size = dpi(48),
-    text = 'Huston, we have a problem',
-    title = 'Battery is dying',
-    timeout = 5,
-    hover_timeout = 0.5,
-    position = 'bottom_left',
-    bg = '#d32f2f',
-    fg = '#EEE9EF',
-    width = 248
-  }
-end
 
 local last_battery_check = os.time()
 watch(

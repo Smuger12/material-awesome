@@ -4,8 +4,10 @@
  */
 
 configuration {
-	display-drun:    "activate";
-	display-run:     "execute";
+	display-drun:    "Search apps";
+	display-run:     "Run command";
+	display-ssh:     "SSH";
+	display-window:     "Window";
 	show-icons:      true;	
 	sidebar-mode:    true;
 }
@@ -41,6 +43,8 @@ configuration {
 	padding:                     0px;
 	font:            "Roboto medium 10";
 }
+
+element-icon { size: 3.5ch ; }
 
 window {
 	location:	 west;
